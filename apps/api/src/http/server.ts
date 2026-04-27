@@ -1,4 +1,5 @@
 import fastifyCors from '@fastify/cors'
+import 'dotenv/config'
 import { fastify } from 'fastify'
 import {
   // jsonSchemaTransform,

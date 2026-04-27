@@ -82,7 +82,7 @@ model Invite {
 
   @@unique([email, organizationId])
   @@index([email])
-  @@map("Invites")
+  @@map("invites")
 }
 
 model Member {
