@@ -31,7 +31,7 @@ export function ProjectForm() {
       {success === true && message && (
         <Alert variant="success">
           <AlertTriangle className="size-4" />
-          <AlertTitle>Sign in failed!</AlertTitle>
+          <AlertTitle>Success!</AlertTitle>
           <AlertDescription>
             <p>{message}</p>
           </AlertDescription>

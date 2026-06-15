@@ -82,7 +82,7 @@ export async function createOrganizationAction(data: FormData) {
 
   return {
     success: true,
-    message: 'Sucesscully saved the organization.',
+    message: 'Successfully saved the organization.',
     errors: null,
   }
 }
