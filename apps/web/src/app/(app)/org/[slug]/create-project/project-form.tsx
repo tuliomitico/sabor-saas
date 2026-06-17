@@ -56,7 +56,6 @@ export function ProjectForm() {
         <Label htmlFor="description">Description</Label>
         <Textarea
           name="description"
-          type="text"
           id="description"
           inputMode="url"
           placeholder="example.com"
