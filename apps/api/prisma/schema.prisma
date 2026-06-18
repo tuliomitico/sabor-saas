@@ -21,12 +21,12 @@ model User {
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
 
-  tokens            Token[]
-  accounts          Account[]
-  invites           Invite[]
-  member_on         Member[]
-  owns_organization Organization[]
-  owns_projects     Project[]
+  tokens             Token[]
+  accounts           Account[]
+  invites            Invite[]
+  member_on          Member[]
+  owns_organizations Organization[]
+  owns_projects      Project[]
 
   @@map("users")
 }
@@ -89,7 +89,7 @@ model Member {
   id   String @id @default(uuid())
   role Role   @default(MEMBER)
 
-  organization   Organization @relation(fields: [organizationId], references: [id])
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
   organizationId String       @map("organization_id")
 
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
