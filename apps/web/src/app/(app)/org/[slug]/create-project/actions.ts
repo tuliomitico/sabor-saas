@@ -51,7 +51,7 @@ export async function createProjectAction(data: FormData) {
 
   return {
     success: true,
-    message: 'Successfully saved the project.',
+    message: 'Successfully created the project.',
     errors: null,
   }
 }
