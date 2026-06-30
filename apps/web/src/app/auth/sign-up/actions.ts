@@ -4,6 +4,7 @@ import { HTTPError } from 'ky'
 import { z } from 'zod'
 
 import { signUp } from '@/http/sign-up'
+import { acceptInvite } from '@/http/accept-invite'
 
 const signUpSchema = z
   .object({
@@ -40,6 +41,14 @@ export async function signUpAction(data: FormData) {
       email,
       password,
     })
+
+    const inviteId = cookieStore.get('inviteId')?.value
+
+    if (inviteId) {
+      try {
+        await acceptInvite(inviteId)
+      } catch {}
+    }
   } catch (err) {
     if (err instanceof HTTPError) {
       const { message } = await err.data
