@@ -58,7 +58,7 @@ export async function signInWithEmailAndPassword(data: FormData) {
 
     return {
       success: false,
-      message: 'Unexpected error, trye again in a few minutes',
+      message: 'Unexpected error, try again in a few minutes',
       errors: null,
     }
   }

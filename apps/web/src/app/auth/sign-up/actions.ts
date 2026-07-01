@@ -1,10 +1,11 @@
 'use server'
 
 import { HTTPError } from 'ky'
+import { cookies } from 'next/headers'
 import { z } from 'zod'
 
-import { signUp } from '@/http/sign-up'
 import { acceptInvite } from '@/http/accept-invite'
+import { signUp } from '@/http/sign-up'
 
 const signUpSchema = z
   .object({
@@ -26,6 +27,7 @@ const signUpSchema = z
 
 export async function signUpAction(data: FormData) {
   const result = signUpSchema.safeParse(Object.fromEntries(data))
+  const cookieStore = await cookies()
 
   if (!result.success) {
     const errors = result.error.flatten().fieldErrors
@@ -63,7 +65,7 @@ export async function signUpAction(data: FormData) {
 
     return {
       success: false,
-      message: 'Unexpected error, trye again in a few minutes',
+      message: 'Unexpected error, try again in a few minutes',
       errors: null,
     }
   }
