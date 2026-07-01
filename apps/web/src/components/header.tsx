@@ -5,6 +5,7 @@ import rocketseatIcon from '@/assets/rocketseat-icon.svg'
 import { ability } from '@/auth/auth'
 
 import { OrganizationSwitcher } from './organization-switcher'
+import { PendingInvites } from './pending-invites'
 import { ProfileButton } from './profile-button'
 import { ProjectSwitcher } from './project-switcher'
 import { ThemeSwitcher } from './theme/theme-switcher'
@@ -17,8 +18,11 @@ export async function Header() {
     <div className="mx-auto flex max-w-[1200px] items-center justify-between ">
       <div className="flex items-center gap-3">
         <Image src={rocketseatIcon} alt="Logo do site" className="size-6" />
+
         <Slash className="text-border size-3 -rotate-[24deg]" />
+
         <OrganizationSwitcher />
+
         {permissions?.can('get', 'Project') && (
           <>
             <Slash className="text-border size-3 -rotate-[24deg]" />
@@ -26,7 +30,9 @@ export async function Header() {
           </>
         )}
       </div>
+
       <div className="flex items-center gap-4">
+        <PendingInvites />
         <ThemeSwitcher />
         <Separator orientation="vertical" className="h-5" />
         <ProfileButton />
