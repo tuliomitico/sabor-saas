@@ -12,7 +12,7 @@ interface GetMembershipResponse {
 }
 
 export async function getMembership(
-  org: string
+  org: string,
 ): Promise<GetMembershipResponse> {
   const result = await api
     .get(`organizations/${org}/membership`)

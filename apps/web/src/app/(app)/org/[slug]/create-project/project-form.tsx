@@ -20,7 +20,7 @@ export function ProjectForm() {
     createProjectAction,
     () => {
       queryClient.invalidateQueries({ queryKey: [orgSlug, 'projects'] })
-    }
+    },
   )
 
   return (

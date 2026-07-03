@@ -20,7 +20,7 @@ export async function OrganizationSwitcher() {
   const { organizations } = await getOrganizations()
 
   const currentOrganization = organizations.find(
-    (organization) => organization.slug === currentOrg
+    (organization) => organization.slug === currentOrg,
   )
 
   return (

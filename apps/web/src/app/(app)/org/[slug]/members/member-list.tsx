@@ -70,7 +70,7 @@ export async function MemberList() {
                     <div className="flex items-center justify-end gap-2">
                       {permissions?.can(
                         'transfer_ownership',
-                        authOrganization
+                        authOrganization,
                       ) && (
                         <Button size="sm" variant={'ghost'}>
                           <ArrowLeftRight className="mr-2 size-4" />

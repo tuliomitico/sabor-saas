@@ -21,7 +21,7 @@ export function SignInForm() {
 
   const [{ success, message, errors }, handleSubmit, isPending] = useFormState(
     signInWithEmailAndPassword,
-    () => router.push('/')
+    () => router.push('/'),
   )
 
   return (
